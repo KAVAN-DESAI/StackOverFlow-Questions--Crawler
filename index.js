@@ -42,12 +42,12 @@ request(webPage, async function (err, res, body) { // Main function
     }
     else{
         let pageCount=1; 
-        let numPage=10; // number of pages to fetch data from
+        let numPage=10000; // number of pages to fetch data from
         for(;pageCount<=numPage;pageCount+=5){
-            let i=0;
-            for(;i<5;i++){
+            let counter=0;
+            for(;counter<5;counter++){
                 const webLink="https://stackoverflow.com/questions?page="
-                const url = webLink.concat(pageCount+i);
+                const url = webLink.concat(pageCount+counter);
                 await fetchQuestionDetails(url); // function call to fetch questions
             }
         }
